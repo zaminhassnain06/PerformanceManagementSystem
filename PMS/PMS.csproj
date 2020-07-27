@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{33686E3C-625C-4AB4-8B59-4BCADD99BDB9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PMS</RootNamespace>
+    <AssemblyName>PMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DailyEntryOverAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyEntryOverAll.Designer.cs">
+      <DependentUpon>DailyEntryOverAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkerView.Designer.cs">
+      <DependentUpon>WorkerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetAttendanceDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetAttendanceDetails.Designer.cs">
+      <DependentUpon>GetAttendanceDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewDieAndMolds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewDieAndMolds.Designer.cs">
+      <DependentUpon>AddNewDieAndMolds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddMachineAssociationWithItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMachineAssociationWithItem.Designer.cs">
+      <DependentUpon>AddMachineAssociationWithItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMaterial.Designer.cs">
+      <DependentUpon>AddMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyEntry_Material.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyEntry_Material.Designer.cs">
+      <DependentUpon>DailyEntry_Material.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.cs" />
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Worker_Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker_Details.Designer.cs">
+      <DependentUpon>Worker_Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewWorker.Designer.cs">
+      <DependentUpon>AddNewWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewWorkShop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewWorkShop.Designer.cs">
+      <DependentUpon>AddNewWorkShop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CostOfCustomerRejectionKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CostOfCustomerRejectionKPI.Designer.cs">
+      <DependentUpon>CostOfCustomerRejectionKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerClaimsKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerClaimsKPI.Designer.cs">
+      <DependentUpon>CustomerClaimsKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyEntry_CustomerClaims.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyEntry_CustomerClaims.Designer.cs">
+      <DependentUpon>DailyEntry_CustomerClaims.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyEntry_ProductionAchievement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyEntry_ProductionAchievement.Designer.cs">
+      <DependentUpon>DailyEntry_ProductionAchievement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyEntry_DelivaryCompliance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyEntry_DelivaryCompliance.Designer.cs">
+      <DependentUpon>DailyEntry_DelivaryCompliance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyEntry_ProductionEfficiency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyEntry_ProductionEfficiency.Designer.cs">
+      <DependentUpon>DailyEntry_ProductionEfficiency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyEntry_Machine .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyEntry_Machine .Designer.cs">
+      <DependentUpon>DailyEntry_Machine .cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewMachine.Designer.cs">
+      <DependentUpon>AddNewMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewItem.Designer.cs">
+      <DependentUpon>AddNewItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewFactory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewFactory.Designer.cs">
+      <DependentUpon>AddNewFactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewUser.Designer.cs">
+      <DependentUpon>AddNewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttendanceRatio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceRatio.Designer.cs">
+      <DependentUpon>AttendanceRatio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ButtonsUtility.cs" />
+    <Compile Include="AddProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProcess.Designer.cs">
+      <DependentUpon>AddProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyEntry_CustomerRejection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyEntry_CustomerRejection.Designer.cs">
+      <DependentUpon>DailyEntry_CustomerRejection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyEntry_InhouseRejection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyEntry_InhouseRejection.Designer.cs">
+      <DependentUpon>DailyEntry_InhouseRejection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyEntry_ReworkRatio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyEntry_ReworkRatio.Designer.cs">
+      <DependentUpon>DailyEntry_ReworkRatio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyEntry.Designer.cs">
+      <DependentUpon>DailyEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionEfficiencyKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionEfficiencyKPI.Designer.cs">
+      <DependentUpon>ProductionEfficiencyKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TPM_Machines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TPM_Machines.Designer.cs">
+      <DependentUpon>TPM_Machines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TPM_DieandMolds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TPM_DieandMolds.Designer.cs">
+      <DependentUpon>TPM_DieandMolds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EquipFailureRateKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EquipFailureRateKPI.Designer.cs">
+      <DependentUpon>EquipFailureRateKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OEEKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OEEKPI.Designer.cs">
+      <DependentUpon>OEEKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YieldVarianceKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YieldVarianceKPI.Designer.cs">
+      <DependentUpon>YieldVarianceKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionAchivRateKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionAchivRateKPI.Designer.cs">
+      <DependentUpon>ProductionAchivRateKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DelivaryComplianceKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DelivaryComplianceKPI.Designer.cs">
+      <DependentUpon>DelivaryComplianceKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CostOfInhouseRejectionKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CostOfInhouseRejectionKPI.Designer.cs">
+      <DependentUpon>CostOfInhouseRejectionKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CostOfReworkKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CostOfReworkKPI.Designer.cs">
+      <DependentUpon>CostOfReworkKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InhouseRejectionKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InhouseRejectionKPI.Designer.cs">
+      <DependentUpon>InhouseRejectionKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoardAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoardAdmin.Designer.cs">
+      <DependentUpon>DashBoardAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverAll_KPIs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverAll_KPIs.Designer.cs">
+      <DependentUpon>OverAll_KPIs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CustomerRejectionKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerRejectionKPI.Designer.cs">
+      <DependentUpon>CustomerRejectionKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReworkRatioKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReworkRatioKPI.Designer.cs">
+      <DependentUpon>ReworkRatioKPI.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DailyEntryOverAll.resx">
+      <DependentUpon>DailyEntryOverAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkerView.resx">
+      <DependentUpon>WorkerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetAttendanceDetails.resx">
+      <DependentUpon>GetAttendanceDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewDieAndMolds.resx">
+      <DependentUpon>AddNewDieAndMolds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMachineAssociationWithItem.resx">
+      <DependentUpon>AddMachineAssociationWithItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMaterial.resx">
+      <DependentUpon>AddMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyEntry_Material.resx">
+      <DependentUpon>DailyEntry_Material.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker_Details.resx">
+      <DependentUpon>Worker_Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewWorker.resx">
+      <DependentUpon>AddNewWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewWorkShop.resx">
+      <DependentUpon>AddNewWorkShop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CostOfCustomerRejectionKPI.resx">
+      <DependentUpon>CostOfCustomerRejectionKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerClaimsKPI.resx">
+      <DependentUpon>CustomerClaimsKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyEntry_CustomerClaims.resx">
+      <DependentUpon>DailyEntry_CustomerClaims.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyEntry_ProductionAchievement.resx">
+      <DependentUpon>DailyEntry_ProductionAchievement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyEntry_DelivaryCompliance.resx">
+      <DependentUpon>DailyEntry_DelivaryCompliance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyEntry_ProductionEfficiency.resx">
+      <DependentUpon>DailyEntry_ProductionEfficiency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyEntry_Machine .resx">
+      <DependentUpon>DailyEntry_Machine .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewMachine.resx">
+      <DependentUpon>AddNewMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewItem.resx">
+      <DependentUpon>AddNewItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewFactory.resx">
+      <DependentUpon>AddNewFactory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewUser.resx">
+      <DependentUpon>AddNewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceRatio.resx">
+      <DependentUpon>AttendanceRatio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddProcess.resx">
+      <DependentUpon>AddProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyEntry_CustomerRejection.resx">
+      <DependentUpon>DailyEntry_CustomerRejection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyEntry_InhouseRejection.resx">
+      <DependentUpon>DailyEntry_InhouseRejection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyEntry_ReworkRatio.resx">
+      <DependentUpon>DailyEntry_ReworkRatio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyEntry.resx">
+      <DependentUpon>DailyEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionEfficiencyKPI.resx">
+      <DependentUpon>ProductionEfficiencyKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverAll_KPIs.resx">
+      <DependentUpon>OverAll_KPIs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TPM_Machines.resx">
+      <DependentUpon>TPM_Machines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TPM_DieandMolds.resx">
+      <DependentUpon>TPM_DieandMolds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EquipFailureRateKPI.resx">
+      <DependentUpon>EquipFailureRateKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OEEKPI.resx">
+      <DependentUpon>OEEKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YieldVarianceKPI.resx">
+      <DependentUpon>YieldVarianceKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionAchivRateKPI.resx">
+      <DependentUpon>ProductionAchivRateKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DelivaryComplianceKPI.resx">
+      <DependentUpon>DelivaryComplianceKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CostOfInhouseRejectionKPI.resx">
+      <DependentUpon>CostOfInhouseRejectionKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CostOfReworkKPI.resx">
+      <DependentUpon>CostOfReworkKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InhouseRejectionKPI.resx">
+      <DependentUpon>InhouseRejectionKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashBoardAdmin.resx">
+      <DependentUpon>DashBoardAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="CustomerRejectionKPI.resx">
+      <DependentUpon>CustomerRejectionKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReworkRatioKPI.resx">
+      <DependentUpon>ReworkRatioKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Excel.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
